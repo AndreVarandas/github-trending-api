@@ -3,7 +3,7 @@ import { sample, sampleSize, snakeCase } from 'lodash';
 import languages from './languages.json';
 import spokenLanguages from './spoken-languages.json';
 
-const SERVER_URL = 'https://ghapi.huchen.dev';
+let SERVER_URL = 'https://ghapi.huchen.dev';
 
 function buildUrl(baseUrl, params = {}) {
   const queryString = Object.keys(params)
@@ -19,6 +19,8 @@ function checkResponse(res) {
     throw new Error('Something went wrong');
   }
 }
+
+export const setServerUrl = (serverUrl) => (SERVER_URL = serverUrl);
 
 export async function fetchRepositories(params, serverUrl = SERVER_URL) {
   const res = await axios(buildUrl(`${serverUrl}/repositories`, params));
