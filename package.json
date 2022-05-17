@@ -6,7 +6,7 @@
   "main": "dist/github-trending.cjs.js",
   "module": "dist/github-trending.esm.js",
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "repository": {
     "type": "git",
